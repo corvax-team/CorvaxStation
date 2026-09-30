@@ -52,9 +52,9 @@
 //	name = "Белые перчатки"
 //	item_path = /obj/item/clothing/gloves/color/white
 
-// /datum/loadout_item/gloves/gloves_fingerless
-//	name = "Перчатки без пальцев"
-//	item_path = /obj/item/clothing/gloves/fingerless
+/datum/loadout_item/gloves/gloves_fingerless
+	name = "Перчатки без пальцев"
+	item_path = /obj/item/clothing/gloves/fingerless
 
 /datum/loadout_item/gloves/ring/silver
 	name = "Серебряное кольцо"
