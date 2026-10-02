@@ -170,6 +170,8 @@
 	if(uplink_handler.primary_objectives)
 		var/list/primary_objectives = list()
 		for(var/datum/objective/task as anything in uplink_handler.primary_objectives)
+			if(QDELETED(task)) // BANDASTATION ADDITION - a deleted objective leaves null in the list and the runtime blanks the whole UI
+				continue
 			var/list/task_data = list()
 			if(length(primary_objectives) > length(GLOB.phonetic_alphabet))
 				task_data["task_name"] = "DIRECTIVE [length(primary_objectives) + 1]" //The english alphabet is WEAK
