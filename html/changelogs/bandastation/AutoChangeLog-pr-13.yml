@@ -1,0 +1,4 @@
+author: "YesImMorty"
+delete-after: True
+changes:
+  - admin: "События тикетов и действия администрации в них отправляются в Discord через SS Central"
