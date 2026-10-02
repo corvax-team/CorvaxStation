@@ -159,8 +159,12 @@ function toggleAuthModal() {
 }
 
 // once the link is found the server redraws the lobby and the modal goes away with it
-function updateAuthBrowser() {
+function updateAuthBrowser(url) {
   authButton.querySelector('.lobby-text').textContent = 'Открыть ссылку ещё раз';
+  if (url) {
+    document.getElementById('auth_link_url').value = url;
+    document.getElementById('auth_link').classList.remove('hidden');
+  }
   if (authPoll) {
     return;
   }
@@ -174,6 +178,16 @@ function updateAuthBrowser() {
     }
     call_byond('discord_oauth_check', true);
   }, AUTH_POLL_INTERVAL);
+}
+
+function copyAuthLink() {
+  const input = document.getElementById('auth_link_url');
+  input.select();
+  try {
+    document.execCommand('copy');
+  } catch (e) {
+    // selection stays, the player can copy it by hand
+  }
 }
 
 /* Return focus to Byond after click */

@@ -614,6 +614,24 @@ html.loading {
   color: var(--color-text-accent);
 }
 
+.lobby_auth_link {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.lobby_auth_link input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  font: inherit;
+  font-size: 0.85em;
+  color: var(--color-text);
+  background-color: var(--color-section);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-small);
+}
+
 .lobby_auth_controls {
   & button {
     width: 100%;
