@@ -35,7 +35,7 @@
 	to_chat(player, boxed_message("<a href='[login_endpoint]'>Привязать дискорд</a>"))
 	// в системном браузере игрок уже авторизован в Discord, во встроенном окне BYOND нет
 	player << link(login_endpoint)
-	SStitle.title_output(player, null, "updateAuthBrowser")
+	SStitle.title_output(player, login_endpoint, "updateAuthBrowser")
 
 /datum/config_entry/flag/force_discord_verification
 	default = FALSE
