@@ -1,0 +1,4 @@
+author: "YesImMorty"
+delete-after: True
+changes:
+  - bugfix: "Аплинк больше не ломается, если одна из целей была удалена."
