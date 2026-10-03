@@ -186,8 +186,8 @@
 	if(ismob(tracked_thing))
 		var/mob/tracked_mob = tracked_thing
 		if(tracked_mob.stat == DEAD)
-			to_chat(owner, span_mansus("[capitalize(tracked_mob.declent_ru(NOMINATIVE))] в состоянии смерти. Принесите их к руне трансмутации \
-				и вызовите \"[sac_knowledge.name]\", чтобы принести их в жертву!"))
+			to_chat(owner, span_mansus("[capitalize(tracked_mob.declent_ru(NOMINATIVE))] - уже труп. Принесите тело к руне трансмутации \
+				и вызовите \"[sac_knowledge.name]\", чтобы принести его в жертву!"))
 
 	StartCooldown()
 	return TRUE

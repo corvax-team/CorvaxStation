@@ -77,7 +77,7 @@
 	else
 		limb_regen = user.regenerate_limb(BODY_ZONE_L_ARM, 1)
 	if(limb_regen)
-		user.visible_message(span_warning("Отсутствующая рука [user.declent_ru(GENITIVE)] реформируется, издавая громкий, жуткий звук!"), span_userdanger("Ваша рука отрастает, издавая громкий хрустящий звук и причиняя вам сильную боль!"), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
+		user.visible_message(span_warning("Отсутствующая рука [user.declent_ru(GENITIVE)] отрастает заново, издавая громкий, жуткий звук!"), span_userdanger("Ваша рука отрастает, издавая громкий хрустящий звук и причиняя вам сильную боль!"), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
 		user.emote("scream")
 	var/obj/item/W = new weapon_type(user, silent)
 	user.put_in_hands(W)
@@ -388,7 +388,7 @@
 
 	for(var/obj/item/weapon in user.held_items)
 		if(weapon.get_sharpness())
-			victim.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает [capitalize(victim.declent_ru(ACCUSATIVE))] с помощью [weapon.declent_ru(ACCUSATIVE)]!"), span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает вас с помощью [weapon.declent_ru(ACCUSATIVE)]!"))
+			victim.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает [capitalize(victim.declent_ru(ACCUSATIVE))] с помощью [weapon.declent_ru(GENITIVE)]!"), span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает вас с помощью [weapon.declent_ru(GENITIVE)]!"))
 			victim.apply_damage(weapon.force, BRUTE, BODY_ZONE_CHEST, attacking_item = weapon)
 			user.do_item_attack_animation(victim, used_item = weapon, animation_type = ATTACK_ANIMATION_PIERCE)
 			user.add_blood_DNA_to_items(victim.get_blood_dna_list(), ITEM_SLOT_ICLOTHING|ITEM_SLOT_OCLOTHING)
@@ -450,14 +450,14 @@
 			if(victim.dropItemToGround(stealing))
 				victim.visible_message(
 					span_danger("Из руки [victim.declent_ru(GENITIVE)] выдергивается [stealing.declent_ru(NOMINATIVE)] с помощью [declent_ru(GENITIVE)]!"),
-					span_userdanger("[capitalize(declent_ru(NOMINATIVE))] утягивается к [stealing.declent_ru(DATIVE)]!"),
+					span_userdanger("[capitalize(declent_ru(NOMINATIVE))] вырывает у вас [stealing.declent_ru(ACCUSATIVE)]!"),
 				)
 				return on_hit(stealing) //grab the item as if you had hit it directly with the tentacle
 
 			to_chat(ling, span_warning("Не получается вырвать [stealing.declent_ru(ACCUSATIVE)] из рук [victim.declent_ru(GENITIVE)]!"))
 			return BULLET_ACT_BLOCK
 
-		to_chat(ling, span_danger("[capitalize(victim.declent_ru(NOMINATIVE))] не имеет в руках ничего, что можно было бы разоружить!"))
+		to_chat(ling, span_danger("У [victim.declent_ru(GENITIVE)] в руках нет ничего, что можно было бы выбить!"))
 		return BULLET_ACT_HIT
 
 	if(ling.combat_mode)
@@ -613,7 +613,7 @@
 
 /datum/action/changeling/suit/hive_head
 	name = "Hive Head"
-	desc = "Мы покрываем голову восковым покрытием, похожим на пчелиный улей, которое можно использовать для производства пчел, атакующих наших врагов. Стоит 15 химикатов."
+	desc = "Мы покрываем голову восковой оболочкой, похожей на пчелиный улей, которую можно использовать для производства пчел, атакующих наших врагов. Стоит 15 химикатов."
 	helptext = "Хотя голова улья не дает особой брони, она позволяет посылать пчел в атаку на цели. Внутрь улья можно насыпать реагенты, чтобы все выпущенные пчелы впрыскивали эти реагенты."
 	button_icon_state = "hive_head"
 	category = "combat"
@@ -667,7 +667,7 @@
 
 /datum/action/cooldown/hivehead_spawn_minions
 	name = "Release Bees"
-	desc = "Выпустите группу пчел, чтобы они атаковали всех остальных живых существ."
+	desc = "Выпускает рой пчел, который атакует всех остальных живых существ."
 	background_icon_state = "bg_demon"
 	overlay_icon_state = "bg_demon_border"
 	button_icon = 'icons/mob/simple/bees.dmi'
@@ -717,7 +717,7 @@
 
 /datum/action/cooldown/hivehead_spawn_minions/legion
 	name = "Release Legion"
-	desc = "Выпустите группу легиона, чтобы они атаковали все остальные формы жизни."
+	desc = "Выпускает стаю легионов, которая атакует все остальные формы жизни."
 	button_icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi'
 	button_icon_state = "legion_head"
 	cooldown_time = 15 SECONDS
@@ -725,7 +725,7 @@
 	spawn_count = 4
 
 /datum/action/cooldown/hivehead_spawn_minions/legion/do_tell()
-	owner.visible_message(span_warning("Голова [owner.declent_ru(GENITIVE)] начинает трястись, когда из нее начинает появлятся легион!"), span_warning("Мы выпускаем легион."), span_hear("Вы слышите громкий хлюпающий звук!"))
+	owner.visible_message(span_warning("Голова [owner.declent_ru(GENITIVE)] начинает трястись, когда из нее начинает появляться легион!"), span_warning("Мы выпускаем легион."), span_hear("Вы слышите громкий хлюпающий звук!"))
 	playsound(owner, 'sound/effects/blob/attackblob.ogg', 60, TRUE)
 
 /datum/action/cooldown/hivehead_spawn_minions/legion/minion_additional_changes(mob/living/basic/minion)

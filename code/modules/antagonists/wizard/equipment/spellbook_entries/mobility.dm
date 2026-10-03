@@ -2,7 +2,7 @@
 // Wizard spells that aid mobiilty(or stealth?)
 /datum/spellbook_entry/mindswap
 	name = "Mindswap"
-	desc = "Позволяет вам поменяться телами с целью, находящейся рядом с вами. Вы оба заснете, когда это произойдет, и будет совершенно очевидно, что вы - тело цели, если кто-то увидит, как вы это делаете.."
+	desc = "Позволяет вам поменяться телами с целью, находящейся рядом с вами. Вы оба заснете, когда это произойдет, и будет совершенно очевидно, что вы - тело цели, если кто-то увидит, как вы это делаете."
 	spell_type = /datum/action/cooldown/spell/pointed/mind_transfer
 	category = SPELLBOOK_CATEGORY_MOBILITY
 
@@ -47,7 +47,7 @@
 
 /datum/spellbook_entry/item/staffdoor
 	name = "Staff of Door Creation"
-	desc = "Особый посох, способный превращать твердые стены в украшенные двери. Пригодится для передвижения при отсутствии другого вида передвижения. Не работает со стеклом."
+	desc = "Особый посох, способный превращать твердые стены в украшенные двери. Пригодится, когда больше не на чем передвигаться. Не работает со стеклом."
 	item_path = /obj/item/gun/magic/staff/door
 	cost = 1
 	category = SPELLBOOK_CATEGORY_MOBILITY

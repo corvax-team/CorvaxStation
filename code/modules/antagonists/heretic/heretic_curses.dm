@@ -74,7 +74,7 @@
 		return TRUE
 
 	if(to_curse.can_block_magic(MAGIC_RESISTANCE|MAGIC_RESISTANCE_HOLY, charge_cost = 0))
-		to_chat(to_curse, span_warning("На мгновение тебя охватывает жуткий озноб, но потом он проходит."))
+		to_chat(to_curse, span_warning("На мгновение вас охватывает жуткий озноб, но потом он проходит."))
 		return TRUE
 
 	log_combat(user, to_curse, "cursed via heretic ritual", addition = "([name])")

@@ -67,9 +67,9 @@
 
 	if(user.mind != owner)
 		if(IS_WIZARD_APPRENTICE(user))
-			to_chat(user, span_warning("Если бы вас поймают за подглядыванием в книгу заклинаний вашего учителя, то, скорее всего, вас отчислять из Академии волшебников. Лучше не стоит."))
+			to_chat(user, span_warning("Если вас поймают за подглядыванием в книгу заклинаний учителя, вас, скорее всего, отчислят из Академии волшебников. Лучше не стоит."))
 		else
-			to_chat(user, span_warning("Вы не признаетесь владельцем [declent_ru(GENITIVE)], и не собирается открываться!"))
+			to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] не признает в вас своего владельца и отказывается открываться!"))
 		return
 
 	return ..()

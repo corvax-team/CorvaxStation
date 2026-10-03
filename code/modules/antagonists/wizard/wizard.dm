@@ -273,7 +273,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	wiz_age = APPRENTICE_AGE_MIN
 
 /datum/antagonist/wizard/apprentice/greet()
-	to_chat(owner, "<B>Вы ученик [master.current.real_name]! Вы связаны магическим контрактом, чтобы следовать приказам и помогать в выполнении целей своего учителя.")
+	to_chat(owner, "<B>Вы ученик [master.current.real_name]! Вы связаны магическим контрактом и обязаны выполнять приказы своего учителя и помогать ему в достижении его целей.")
 	owner.announce_objectives()
 
 /datum/antagonist/wizard/apprentice/assign_ritual()
@@ -416,7 +416,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 
 	parts += printplayer(owner)
 	if (ritual)
-		parts += "<br><B>Завершенно Великих ритуалов:</B> [ritual.times_completed]<br>"
+		parts += "<br><B>Завершено Великих ритуалов:</B> [ritual.times_completed]<br>"
 
 	var/count = 1
 	var/wizardwin = TRUE
