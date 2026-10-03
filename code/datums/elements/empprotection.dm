@@ -29,22 +29,21 @@
 	// BANDASTATION EDIT START — перевод тегов
 	var/is_female = (source.examine_descriptor() in list("структура", "машина"))
 	var/he_she_it = is_female ? "Она" : "Он"
-	var/their_low = is_female ? "её" : "его"
 
 	if((flags & EMP_PROTECT_ALL) == EMP_PROTECT_ALL)
-		examine_list[is_female ? "полностью ЭМИ-защищённая" : "полностью ЭМИ-защищённый"] = "[he_she_it] не [is_female ? "подвержена" : "подвержен"] воздействию электромагнитных импульсов и защищает [their_low] содержимое и проводку от них."
+		examine_list[is_female ? "полностью ЭМИ-защищённая" : "полностью ЭМИ-защищённый"] = "[he_she_it] не [is_female ? "подвержена" : "подвержен"] воздействию электромагнитных импульсов и защищает своё содержимое и проводку от них."
 		return
 
 	if(flags & EMP_PROTECT_SELF)
 		examine_list[is_female ? "ЭМИ-устойчивая" : "ЭМИ-устойчивый"] = "[he_she_it] не [is_female ? "подвержена" : "подвержен"] воздействию электромагнитных импульсов."
 
 	if((flags & (EMP_PROTECT_CONTENTS|EMP_PROTECT_WIRES)) == (EMP_PROTECT_CONTENTS|EMP_PROTECT_WIRES))
-		examine_list[is_female ? "частично ЭМИ-экранированная" : "частично ЭМИ-экранированный"] = "[he_she_it] защищает [their_low] проводку и содержимое от электромагнитных импульсов."
+		examine_list[is_female ? "частично ЭМИ-экранированная" : "частично ЭМИ-экранированный"] = "[he_she_it] защищает свою проводку и содержимое от электромагнитных импульсов."
 
 	else if(flags & EMP_PROTECT_CONTENTS)
-		examine_list[is_female ? "частично ЭМИ-экранированная" : "частично ЭМИ-экранированный"] = "[he_she_it] защищает [their_low] содержимое от электромагнитных импульсов."
+		examine_list[is_female ? "частично ЭМИ-экранированная" : "частично ЭМИ-экранированный"] = "[he_she_it] защищает своё содержимое от электромагнитных импульсов."
 
 	else if(flags & EMP_PROTECT_WIRES)
-		examine_list[is_female ? "частично ЭМИ-экранированная" : "частично ЭМИ-экранированный"] = "[he_she_it] защищает [their_low] проводку от электромагнитных импульсов."
+		examine_list[is_female ? "частично ЭМИ-экранированная" : "частично ЭМИ-экранированный"] = "[he_she_it] защищает свою проводку от электромагнитных импульсов."
 
 	// BANDASTATION EDIT END

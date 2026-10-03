@@ -54,7 +54,7 @@
 			continue
 
 		if(restraint == user.loc)
-			restraint.visible_message(span_warning("Пузырящаяся кислота начинает извергаться из [restraint.declent_ru(ACCUSATIVE)]..."))
+			restraint.visible_message(span_warning("Пузырящаяся кислота начинает извергаться из [restraint.declent_ru(GENITIVE)]..."))
 			addtimer(CALLBACK(restraint, TYPE_PROC_REF(/atom, atom_destruction), ACID), 4 SECONDS)
 			for(var/beat in 1 to 3)
 				addtimer(CALLBACK(src, PROC_REF(make_puddle), restraint), beat SECONDS)

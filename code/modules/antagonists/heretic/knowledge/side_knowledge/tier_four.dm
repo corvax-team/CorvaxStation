@@ -138,7 +138,7 @@
 				return TRUE
 
 	loc.balloon_alert(user, "Ритуал не удался — нет крови!")
-	to_chat(user, span_mansus("Вам не хватает крови для завершения ритуала. \"[name]\"."))
+	to_chat(user, span_mansus("Вам не хватает крови для завершения ритуала \"[name]\"."))
 	return FALSE
 
 /datum/heretic_knowledge/crimson_cleave/cleanup_atoms(list/selected_atoms)

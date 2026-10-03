@@ -63,7 +63,7 @@
 		essence_drained += rand(40, 50)
 
 	if(!target_has_client && HAS_TRAIT(target, TRAIT_LESSER_HUMANOID))
-		to_chat(src, span_revennotice("[capitalize(target.ru_p_them())] душа слаба и неразвита. Они не будут стоить многого."))
+		to_chat(src, span_revennotice("[capitalize(target.ru_p_them())] душа слаба и неразвита. Много с неё не возьмёшь."))
 		essence_drained = 5
 
 	to_chat(src, span_revennotice("[capitalize(target.ru_p_them())] душа слаба и колеблется. Пришло время поглощать."))
@@ -74,26 +74,26 @@
 
 	switch(essence_drained)
 		if(1 to 30)
-			to_chat(src, span_revennotice("[target] не принесёт особой пользы. Тем не менее, важна каждая мелочь."))
+			to_chat(src, span_revennotice("[target] не даст много эссенции. Но каждая капля на счету."))
 		if(30 to 70)
-			to_chat(src, span_revennotice("[target] получится среднее количество эссенции."))
+			to_chat(src, span_revennotice("[target] даст среднее количество эссенции."))
 		if(70 to 90)
-			to_chat(src, span_revenboldnotice("Пир для гурманов! [target] принесет вам много пользы."))
+			to_chat(src, span_revenboldnotice("Вот это пир! [target] даст вам много эссенции."))
 		if(90 to INFINITY)
 			to_chat(src, span_revenbignotice("Ах, совершенная душа. [target] даст вам огромное количество эссенции."))
 
 	if(!do_after(src, (rand(15, 25) DECISECONDS), target, timed_action_flags = IGNORE_HELD_ITEM)) //how about now
-		to_chat(src, span_revenwarning("Вы недостаточно близко, чтобы проникнуть в душу [target ? "[target]" : "[target.ru_p_them()]"]. Связь прервана."))
+		to_chat(src, span_revenwarning("Вы недостаточно близко, чтобы вытягивать душу [target ? "[target]" : "[target.ru_p_them()]"]. Связь прервана."))
 		return FALSE
 
 	if(!IS_UNCONSCIOUS_OR_CRIT(target))
-		to_chat(src, span_revenwarning("[capitalize(target.ru_p_they())] теперь достаточно силён, чтобы противостоять вашему поглощению!"))
-		to_chat(target, span_bolddanger("Вы чувствуете, как что-то тянется по вашему телу, прежде чем утихнуть.")) //hey, wait a minute...
+		to_chat(src, span_revenwarning("Теперь у [target.ru_p_theirs()] достаточно сил, чтобы противостоять вашему поглощению!"))
+		to_chat(target, span_bolddanger("Вы чувствуете, как что-то тянет всё ваше тело, но затем ощущение стихает.")) //hey, wait a minute...
 		return FALSE
 
 	to_chat(src, span_revenminor("Вы начинаете поглощать эссенцию из души [target]."))
 	if(target.stat != DEAD)
-		to_chat(target, span_warning("Вы испытываете ужасно неприятное ощущение опустошения по мере того, как ваша хватка за жизнь ослабевает..."))
+		to_chat(target, span_warning("Вы испытываете ужасно неприятное чувство опустошения, а жизнь ускользает из ваших рук..."))
 	if(target.stat == SOFT_CRIT)
 		target.Stun(4.6 SECONDS)
 
@@ -106,17 +106,17 @@
 		to_chat(src, span_revenminor("Что-то не так! [target], похоже, сопротивляется поглощению, оставляя вас уязвимым!"))
 		target.visible_message(
 			span_warning("[target] падает на землю."),
-			span_revenwarning("Фиолетовые огни, танцующие в вашем поле зрения отсту--"),
+			span_revenwarning("Фиолетовые огни, пляшущие перед глазами, отсту--"),
 		)
 		return FALSE
 
 	var/datum/beam/draining_beam = Beam(target, icon_state = "drain_life")
 	if(!do_after(src, 4.6 SECONDS, target, timed_action_flags = (IGNORE_HELD_ITEM | IGNORE_INCAPACITATED))) //As one cannot prove the existence of ghosts, ghosts cannot prove the existence of the target they were draining.
-		to_chat(src, span_revenwarning("[target ? "Душа [target]" : "[target.ru_p_them()]"] была вырвана из ваших объятий. Связь разорвана."))
+		to_chat(src, span_revenwarning("[target ? "Душа [target]" : "[target.ru_p_them()]"] была вырвана из вашей хватки. Связь разорвана."))
 		if(target)
 			target.visible_message(
 				span_warning("[target] падает на землю."),
-				span_revenwarning("Фиолетовые огни, танцующие в вашем поле зрения отсту--"),
+				span_revenwarning("Фиолетовые огни, пляшущие перед глазами, отсту--"),
 			)
 		qdel(draining_beam)
 		return FALSE
@@ -125,17 +125,17 @@
 
 	if(essence_drained <= 90 && target.stat != DEAD && !HAS_TRAIT(target, TRAIT_LESSER_HUMANOID))
 		max_essence += 5
-		to_chat(src, span_revenboldnotice("Поглощение живой души [target] повысило ваш максимальный уровень эссенции. Ваша новая максимальная эссенция - [max_essence]."))
+		to_chat(src, span_revenboldnotice("Поглощение живой души [target] повысило ваш максимальный уровень эссенции. Ваш новый максимум эссенции - [max_essence]."))
 
 	if(essence_drained > 90)
 		max_essence += 15
 		perfectsouls++
-		to_chat(src, span_revenboldnotice("Совершенство души [target] повысило ваш максимальный уровень эссенции. Ваша новая максимальная эссенции - [max_essence]."))
+		to_chat(src, span_revenboldnotice("Совершенство души [target] повысило ваш максимальный уровень эссенции. Ваш новый максимум эссенции - [max_essence]."))
 
-	to_chat(src, span_revennotice("Душа [target] значительно ослаблена и в настоящее время больше не будет давать эссенции."))
+	to_chat(src, span_revennotice("Душа [target] значительно ослаблена и пока что больше не даст эссенции."))
 	target.visible_message(
 		span_warning("[target] падает на землю."),
-		span_revenwarning("Фиолетовый свет, танцующий перед глазами, приближа--"),
+		span_revenwarning("Фиолетовые огни, пляшущие перед глазами, всё бли--"),
 	)
 
 	LAZYADD(drained_mobs, REF(target))

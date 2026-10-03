@@ -13,12 +13,12 @@ Intended to push a creepy, mad scientist/doctor vibe, or someone who is downrigh
 	timeout = 2 MINUTES
 
 /datum/mood_event/morbid_dissection_success
-	description = "Я горжусь своей работой. Никто не сравнится со мной с препарированием тела."
+	description = "Я горжусь своей работой. Никто не препарирует тела так, как я."
 	mood_change = 2
 	timeout = 2 MINUTES
 
 /datum/mood_event/morbid_abominable_surgery_success
-	description = "Даже сам Пикассо с трудом мог бы сравниться со мной своей кисточкой с тем, как я управляюсь с ножом."
+	description = "Сам Пикассо вряд ли сумел бы кистью то, что я творю ножом."
 	mood_change = 2
 	timeout = 2 MINUTES
 
@@ -50,7 +50,7 @@ Intended to push a creepy, mad scientist/doctor vibe, or someone who is downrigh
 	timeout = 2 MINUTES
 
 /datum/mood_event/morbid_saved_life
-	description = "Я смог бы сделать гораздо большее с этим трупом, чем возвращать его к своей бесполезной жизни. Ужасно."
+	description = "С этим трупом я мог бы сделать куда больше, чем спасая чью-то бесполезную жизнь. Ужасно."
 	mood_change = -6
 	timeout = 2 MINUTES
 

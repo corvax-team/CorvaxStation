@@ -63,7 +63,7 @@
 	. = ..()
 	if (!isobserver(user) || gathering_candidates)
 		return
-	. += span_notice("Вы можете использовать это, чтобы войти в этот мир за ужасного монстра.")
+	. += span_notice("Вы можете использовать это, чтобы войти в этот мир в облике ужасного монстра.")
 
 /// Turn a ghost into an 'orrible beast
 /obj/structure/lock_tear/proc/ghost_to_monster(mob/dead/observer/user, should_ask = TRUE)

@@ -72,8 +72,8 @@
 	var/datum/bank_account/spacer_account = quirk_holder.get_bank_account()
 	if(!isnull(spacer_account))
 		spacer_account.payday_modifier *= 1.25
-		to_chat(quirk_holder, span_info("Учитывая ваше происхождение как спейсера, \
-			Вы получаете 25% надбавку за работу в опасных условиях в связи с [on_a_planet ?  "станционной" : "профессиональной"] деятельностью."))
+		to_chat(quirk_holder, span_info("Поскольку вы спейсер, \
+			вам положена надбавка 25% за опасные условия труда в связи с назначением на эту [on_a_planet ?  "станцию" : "должность"]."))
 
 	// Supply them with some patches to help out on their new assignment
 	var/obj/item/storage/pill_bottle/ondansetron/disgust_killers = new()

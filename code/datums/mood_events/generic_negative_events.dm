@@ -86,7 +86,7 @@
 
 /datum/mood_event/dismembered/add_effects(obj/item/bodypart/limb)
 	if(limb)
-		description = "АХ! МОЯ [uppertext(limb.plaintext_zone)]! Я ЕЙ ПОЛЬЗОВАЛСЯ!"
+		description = "АХ! МОЯ [uppertext(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)]! Я ЕЙ ПОЛЬЗОВАЛСЯ!"
 
 /datum/mood_event/reattachment
 	description = "Ай! Такое ощущение, что я уснул на этой конечности."
@@ -108,7 +108,7 @@
 	mood_change = -7
 
 /datum/mood_event/table
-	description = "Кто-то опрокинул меня об стол!"
+	description = "Кто-то швырнул меня на стол!"
 	mood_change = -2
 	timeout = 2 MINUTES
 
@@ -127,7 +127,7 @@
 
 /datum/mood_event/table_limbsmash/add_effects(obj/item/bodypart/banged_limb)
 	if(banged_limb)
-		description = "Моя чёртова [banged_limb.plaintext_zone] болит, как же чертовски болит..."
+		description = "Моя чёртова [banged_limb.ru_plaintext_zone[NOMINATIVE] || banged_limb.plaintext_zone], чёрт, как же больно..."
 
 /datum/mood_event/brain_damage
 	mood_change = -3
@@ -156,13 +156,13 @@
 	event_flags = MOOD_EVENT_FEAR
 
 /datum/mood_event/claustrophobia
-	description = "Я в заперти?! Дайте мне выйти!!!"
+	description = "Почему мне кажется, что я в ловушке?! Выпустите меня!!!"
 	mood_change = -7
 	timeout = 1 MINUTES
 	event_flags = MOOD_EVENT_FEAR
 
 /datum/mood_event/bright_light
-	description = "Я ненавижу свет... Мне нужно найти место по-темнее..."
+	description = "Я ненавижу свет... Мне нужно найти место потемнее..."
 	mood_change = -12
 
 /datum/mood_event/family_heirloom_missing
@@ -201,7 +201,7 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/painful_medicine
-	description = "Медицина может и сделает мне лучше, но сейчас она чертовски жжёт."
+	description = "Лекарства, может, и пойдут мне на пользу, но сейчас они чертовски жгут."
 	mood_change = -5
 	timeout = 60 SECONDS
 	event_flags = MOOD_EVENT_PAIN
@@ -270,12 +270,12 @@
 		description = "Каждый должен с чего-то начать свой творческий путь!"
 
 /datum/mood_event/graverobbing
-	description = "Я только что осквернил чью-то могилу... Не могу поверить себе..."
+	description = "Я только что осквернил чью-то могилу... Не могу поверить, что я это сделал..."
 	mood_change = -8
 	timeout = 3 MINUTES
 
 /datum/mood_event/deaths_door
-	description = "Это такой конец..."
+	description = "Вот и всё... Я и правда умру."
 	mood_change = -20
 
 /datum/mood_event/gunpoint
@@ -447,14 +447,14 @@
 	timeout = 10 MINUTES
 
 /datum/mood_event/russian_roulette_lose
-	description = "Я поставил на кон свою жизнь и проиграл! Это такой конец..."
+	description = "Я поставил на кон свою жизнь и проиграл! Похоже, это конец..."
 	mood_change = -20
 	timeout = 10 MINUTES
 
 /datum/mood_event/russian_roulette_lose/add_effects()
 	if(HAS_PERSONALITY(owner, /datum/personality/gambler))
 		mood_change *= 0.5
-		description = "Я поставил свою жизнь и проиграл! Игра была подстроена с самого начала..."
+		description = "Я поставил на кон свою жизнь и проиграл! Игра была подстроена с самого начала..."
 		return
 
 /datum/mood_event/bad_touch_bear_hug
@@ -483,7 +483,7 @@
 	mood_change = -3
 
 /datum/mood_event/moon_insanity
-	description = "ЛУНА СУДИТ И СЧИТАЕТ МЕНЯ ЖАЖДУЩИМ!!!"
+	description = "ЛУНА СУДИТ МЕНЯ И НАХОДИТ НЕДОСТОЙНЫМ!!!"
 	mood_change = -3
 	timeout = 5 MINUTES
 	event_flags = MOOD_EVENT_FEAR

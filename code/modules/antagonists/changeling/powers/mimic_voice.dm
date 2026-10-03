@@ -2,7 +2,7 @@
 	name = "Mimic Voice"
 	desc = "Мы формируем наши голосовые железы так, чтобы они звучали желаемым голосом. Поддержание этой силы замедляет выработку химических веществ."
 	button_icon_state = "mimic_voice"
-	helptext = "Превратит ваш голос в имя, которое вы введете. Мы должны постоянно расходовать химические вещества, чтобы поддерживать такую форму."
+	helptext = "Ваш голос будет звучать как голос того, чье имя вы введете. Мы должны постоянно расходовать химические вещества, чтобы поддерживать такую форму."
 	category = "stealth"
 	chemical_cost = 0//constant chemical drain hardcoded
 	dna_cost = 1
@@ -42,7 +42,7 @@
 	..()
 	changeling.chem_recharge_slowdown += 0.25
 	user.override_voice = mimic_voice
-	to_chat(user, span_notice("Мы формируем наши железы так, чтобы они издавали голос <b>[mimic_voice]</b>, Это замедлит регенерацию химических веществ во время активной деятельности."))
+	to_chat(user, span_notice("Мы формируем наши железы так, чтобы они издавали голос <b>[mimic_voice]</b>. Это замедлит регенерацию химических веществ, пока способность активна."))
 	to_chat(user, span_notice("Используйте эту силу снова, чтобы вернуть наш прежний голос и вернуть производство химикатов к нормальному уровню."))
 	RegisterSignal(user, COMSIG_TTS_COMPONENT_PRE_CAST_TTS, PROC_REF(replace_tts_seed)) // BANDASTATION EDIT - TTS
 	return TRUE

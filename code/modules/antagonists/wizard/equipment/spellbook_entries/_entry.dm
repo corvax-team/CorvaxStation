@@ -95,7 +95,7 @@
 	if(existing)
 		var/before_name = existing.name
 		if(!existing.level_spell())
-			to_chat(user, span_warning("Это заклинание не может быть болeе улучшено!"))
+			to_chat(user, span_warning("Это заклинание больше нельзя улучшить!"))
 			return FALSE
 
 		to_chat(user, span_notice("Вы улучшили [before_name] в [existing.name]."))

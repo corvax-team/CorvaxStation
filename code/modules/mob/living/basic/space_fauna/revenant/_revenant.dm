@@ -413,7 +413,7 @@
 	SIGNAL_HANDLER
 	visible_message(
 		span_warning("[src] резко вздрагивает!"),
-		span_revendanger("Когда [weapon.declent_ru(ACCUSATIVE)] проходит сквозь вас, вы чувствуете, как ваша сущность покидает вас!"),
+		span_revendanger("Когда [weapon.declent_ru(ACCUSATIVE)] проходит сквозь вас, вы чувствуете, как ваша эссенция утекает!"),
 	)
 	apply_status_effect(/datum/status_effect/revenant/inhibited, 3 SECONDS)
 
@@ -434,7 +434,7 @@
 		return FALSE
 
 	if(HAS_TRAIT(step_turf, TRAIT_TURF_BLESSED))
-		to_chat(src, span_warning("Святая энергия преграждают вам путь!"))
+		to_chat(src, span_warning("Святая энергия преграждает вам путь!"))
 		return FALSE
 
 	return TRUE

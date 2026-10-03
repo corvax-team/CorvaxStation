@@ -37,6 +37,6 @@
 	if(isnull(item))
 		return FALSE
 
-	to_chat(cast_on, span_warning("Ваш [storage_item.declent_ru(NOMINATIVE)] чувствуется легче..."))
-	to_chat(owner, span_notice("Одним мгновением, вы вытягиваете [item.declent_ru(ACCUSATIVE)] из [storage_item.declent_ru(GENITIVE)] у [cast_on.declent_ru(GENITIVE)]."))
+	to_chat(cast_on, span_warning("Кажется, [storage_item.declent_ru(NOMINATIVE)] теперь весит меньше..."))
+	to_chat(owner, span_notice("В мгновение ока вы вытягиваете [item.declent_ru(ACCUSATIVE)] из [storage_item.declent_ru(GENITIVE)] у [cast_on.declent_ru(GENITIVE)]."))
 	owner.put_in_active_hand(item)

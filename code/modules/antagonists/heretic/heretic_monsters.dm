@@ -15,7 +15,7 @@
 /datum/antagonist/heretic_monster/on_removal()
 	if(!silent)
 		if(master?.current)
-			to_chat(master.current, span_warning("Сущность [owner.declent_ru(GENITIVE)], вашего слуги, исчезает из твоего сознания."))
+			to_chat(master.current, span_warning("Сущность [owner.declent_ru(GENITIVE)], вашего слуги, исчезает из вашего сознания."))
 		if(owner.current)
 			to_chat(owner.current, span_deconversion_message("Ваш разум начинает заполняться туманом - ваш хозяин [master ? "больше не [master]":"отсутствует"], вы свободны!"))
 			owner.current.visible_message(span_deconversion_message("[capitalize(owner.current.declent_ru(NOMINATIVE))], кажется, освобождается от оков Мансуса!"), ignored_mobs = owner.current)
@@ -48,4 +48,4 @@
 	objectives += master_obj
 	owner.announce_objectives()
 	to_chat(owner, span_boldnotice("Вы - [ishuman(owner.current) ? "возвращённый труп":"ужасное создание, принесённое"] в этот мир через врата Мансуса."))
-	to_chat(owner, span_notice("Твой хозяин - [master]. Помогай ему во всех деяниях."))
+	to_chat(owner, span_notice("Ваш хозяин - [master]. Помогайте ему во всех деяниях."))

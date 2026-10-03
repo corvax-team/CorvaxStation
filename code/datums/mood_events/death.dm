@@ -99,7 +99,7 @@
 	return HAS_MIND_TRAIT(who, TRAIT_NAIVE) && !dusted && !gibbed
 
 /datum/mood_event/conditional/see_death/naive/update_effect(mob/dead_mob, dusted, gibbed)
-	description = "Хорошо поспать, [get_descriptor(dead_mob)]."
+	description = "Сладких снов, [get_descriptor(dead_mob)]."
 
 /// Cultists are super brainwashed so they get buffs instead
 /datum/mood_event/conditional/see_death/cult
@@ -129,7 +129,7 @@
 /// Then gamers
 /datum/mood_event/conditional/see_death/gamer
 	priority = GAMER_PRIORITY
-	description = "Ещё один глотает пыль!"
+	description = "Ещё один сыграл в ящик!"
 	mood_change = parent_type::mood_change * -0.5
 
 /datum/mood_event/conditional/see_death/gamer/condition_fulfilled(mob/living/who, mob/dead_mob, dusted, gibbed)
@@ -231,7 +231,7 @@
 	if(isalienadult(dead_mob))
 		change_modifier = 0.25
 		timeout_modifier = 0.25
-		description = "Этот ксеноморф глотает пыль. Ооо, да!!"
+		description = "Этот ксеноморф сыграл в ящик. Ооо, да!!"
 		if(gibbed || dusted)
 			change_modifier += 0.1
 			timeout_modifier += 0.1
@@ -240,7 +240,7 @@
 	if(isalienroyal(dead_mob) || istype(dead_mob, /mob/living/basic/alien/queen))
 		change_modifier = 0.5
 		timeout_modifier = 0.5
-		description = "Королева пала! Галактика начнёт новую жизнь! Я надеюсь, что все эти ублюдки сгниют в аду!"
+		description = "Королева пала! Галактика проживёт ещё один день! Я надеюсь, что все эти ублюдки сгниют в аду!"
 		if(gibbed || dusted)
 			change_modifier += 0.25
 			timeout_modifier += 0.25

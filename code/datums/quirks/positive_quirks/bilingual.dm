@@ -3,7 +3,7 @@
 	desc = "За эти годы вы освоили еще один язык!"
 	icon = FA_ICON_GLOBE
 	value = 4
-	gain_text = span_notice("Некоторые из слов ваших собеседников точно не являются обычными. Хорошо, что вы научились их понимать.")
+	gain_text = span_notice("Некоторые слова окружающих явно не из общего языка. Хорошо, что вы к этому готовились.")
 	lose_text = span_notice("Кажется, вы забыли свой второй язык.")
 	medical_record_text = "Пациент говорит на нескольких языках."
 	mail_goodies = list(/obj/item/taperecorder, /obj/item/clothing/head/beret/frenchberet, /obj/item/clothing/mask/fakemoustache/italian)
@@ -26,9 +26,9 @@
 	if(!language_type || quirk_holder.has_language(language_type))
 		language_type = /datum/language/uncommon
 		if(quirk_holder.has_language(language_type))
-			to_chat(quirk_holder, span_boldnotice("Вы уже знакомы с данной чертой в своих предпочтениях, поэтому не стали изучать ее."))
+			to_chat(quirk_holder, span_boldnotice("Вы уже знаете язык, выбранный в настройках этой черты, поэтому не выучили ничего нового."))
 			return
-		to_chat(quirk_holder, span_boldnotice("Вы уже знакомы с данной чертой в своих предпочтениях, поэтому вместо нее вы выучили старогалактический."))
+		to_chat(quirk_holder, span_boldnotice("Вы уже знаете язык, выбранный в настройках этой черты, поэтому вместо него выучили старогалактический."))
 
 	var/speakable = client_source?.prefs.read_preference(/datum/preference/toggle/language_speakable)
 	var/language_skill = client_source?.prefs.read_preference(/datum/preference/choiced/language_skill) || "100%"

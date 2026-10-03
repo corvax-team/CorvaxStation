@@ -6,22 +6,22 @@
 	storedinfo = list(
 		new /datum/tape_message("00:04", text = "Три."),
 		new /datum/tape_message("00:05", text = "Года."),
-		new /datum/tape_message("00:07", text = "Три ЧЕРТОВЫХ года в этом морозильнике"),
-		new /datum/tape_message("00:11", text = "Моя миссия должна быть закончена уже!"),
-		new /datum/tape_message("00:15", text = "Nanotrasen оставил свое место сгнить на как,"),
-		new /datum/tape_message("00:20", text = "8, 9, 10 месяцев? Я потерял счет"),
-		new /datum/tape_message("00:25", text = "Это была миссия для ДВУХ человек,"),
-		new /datum/tape_message("00:29", text = "Но другой агент даже не дает никаких признаков пробуждения..."),
+		new /datum/tape_message("00:07", text = "Три ГРЁБАНЫХ года в этой ледяной дыре"),
+		new /datum/tape_message("00:11", text = "Моё задание уже должно было закончиться!"),
+		new /datum/tape_message("00:15", text = "Nanotrasen бросили это место гнить уже сколько,"),
+		new /datum/tape_message("00:20", text = "8, 9, 10 месяцев? Я сбился со счёта"),
+		new /datum/tape_message("00:25", text = "Это задание было рассчитано на ДВОИХ,"),
+		new /datum/tape_message("00:29", text = "Но второй агент даже не подаёт признаков пробуждения..."),
 		//long silence
-		new /datum/tape_message("02:00", text = "Я не могу этого больше, чел."),
-		new /datum/tape_message("02:03", text = "Мне нужно уйти,"),
-		new /datum/tape_message("02:06", text = "Может быть, с перчатками гориллы, я могу..."),
+		new /datum/tape_message("02:00", text = "Я так больше не могу, чувак."),
+		new /datum/tape_message("02:03", text = "Мне нужно выбраться отсюда,"),
+		new /datum/tape_message("02:06", text = "Может, с перчатками гориллы я смогу..."),
 		new /datum/tape_message("02:11", text = "Хм."),
 		//shorter silence
 		new /datum/tape_message("02:34", text = "Я решил рискнуть."),
-		new /datum/tape_message("02:37", text = "Если кто-то найдет эту ленту,"),
-		new /datum/tape_message("02:40", text = "независимо от исхода,"),
-		new /datum/tape_message("02:43", text = "просто знай, что я не пожалел об этом.")
+		new /datum/tape_message("02:37", text = "Если кто-нибудь найдёт эту запись,"),
+		new /datum/tape_message("02:40", text = "чем бы всё ни кончилось,"),
+		new /datum/tape_message("02:43", text = "просто знай, что я об этом не жалел.")
 	)
 	timestamp = list (
 		4 SECONDS,

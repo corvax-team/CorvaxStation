@@ -33,7 +33,7 @@
 	mood_change = -10
 
 /datum/mood_event/overcharged
-	description = "Я немного переполнен энергией, мне бы следовало немного её освободить."
+	description = "Я немного переполнен энергией, мне бы следовало немного её высвободить."
 	mood_change = -4
 
 /datum/mood_event/charged
@@ -70,7 +70,7 @@
 	mood_change = -12
 
 /datum/mood_event/disgust/dirty_food
-	description = "Это было не слишком гигиенично есть..."
+	description = "Есть это было не слишком гигиенично..."
 	mood_change = -6
 	timeout = 4 MINUTES
 
@@ -80,7 +80,7 @@
 		description = "Еда была грязной, но съедобной."
 	if(HAS_PERSONALITY(owner, /datum/personality/gourmand))
 		mood_change *= 1.5
-		description = "Это еда была грязной. Её что, готовили в мусорном баке?!"
+		description = "Эта еда была грязной. Её что, готовили в мусорном баке?!"
 
 //Generic needs events
 /datum/mood_event/shower
