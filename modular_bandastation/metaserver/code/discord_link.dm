@@ -30,7 +30,8 @@
 		return
 
 	var/list/data = json_decode(response.body)
-	var/login_endpoint = "[CONFIG_GET(string/ss_central_url)]/oauth/login?token=[data]"
+	var/public_url = CONFIG_GET(string/ss_central_public_url) || CONFIG_GET(string/ss_central_url)
+	var/login_endpoint = "[public_url]/oauth/login?token=[data]"
 
 	to_chat(player, boxed_message("<a href='[login_endpoint]'>Привязать дискорд</a>"))
 	// в системном браузере игрок уже авторизован в Discord, во встроенном окне BYOND нет

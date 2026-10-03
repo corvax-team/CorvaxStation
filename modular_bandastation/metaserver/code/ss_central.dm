@@ -6,6 +6,11 @@
 	default = ""
 	protection = CONFIG_ENTRY_LOCKED | CONFIG_ENTRY_HIDDEN
 
+/// Адрес SS Central для ссылок, которые открывает игрок. Если пуст, берётся ss_central_url
+/datum/config_entry/string/ss_central_public_url
+	default = ""
+	protection = CONFIG_ENTRY_LOCKED
+
 /datum/config_entry/string/server_type
 	default = "default"
 
