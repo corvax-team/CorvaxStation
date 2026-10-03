@@ -141,7 +141,7 @@
 		var/obj/item/implant/uplink/starting/new_implant = new(traitor_mob)
 		new_implant.implant(traitor_mob, null, silent = TRUE)
 		if(!silent)
-			to_chat(current, span_boldnotice("Ваш аплинк cиндиката был хитроумно вживлен в вас за небольшую плату в ТК. Просто включите аплинк, чтобы получить к нему доступ."))
+			to_chat(current, span_boldnotice("Ваш аплинк Синдиката был хитроумно вживлен в вас за небольшую плату в ТК. Просто включите аплинк, чтобы получить к нему доступ."))
 		add_memory(/datum/memory/key/traitor_uplink/implant, uplink_loc = "implant")
 		return new_implant
 
