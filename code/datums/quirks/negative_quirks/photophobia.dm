@@ -2,10 +2,10 @@
 
 /datum/quirk/photophobia
 	name = "Photophobia"
-	desc = "Кажется, что яркий свет беспокоит вас больше остальных. Возможно, это следствие какой-либо болезни."
+	desc = "Яркий свет, похоже, беспокоит вас сильнее, чем других. Возможно, это следствие какой-либо болезни."
 	icon = FA_ICON_ARROWS_TO_EYE
 	value = -4
-	gain_text = span_danger("Кажется защиты от света больше нет...")
+	gain_text = span_danger("Безопасность света кажется обманчивой...")
 	lose_text = span_notice("Просветление.")
 	medical_record_text = "Пациент страдает острой фобией света и настаивает на том, что он физически вреден."
 	medical_symptom_text = "Exhibits heightened sensitivity to bright lights, leading to discomfort and avoidance behaviors."

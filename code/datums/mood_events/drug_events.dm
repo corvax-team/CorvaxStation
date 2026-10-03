@@ -81,7 +81,7 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/narcotic_heavy
-	description = "Я как будто окутан в хлопок!"
+	description = "Меня как будто завернули в вату!"
 	mood_change = 9
 	timeout = 3 MINUTES
 

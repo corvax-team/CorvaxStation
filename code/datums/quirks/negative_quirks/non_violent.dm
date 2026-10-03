@@ -4,8 +4,8 @@
 	icon = FA_ICON_PEACE
 	value = -8
 	mob_trait = TRAIT_PACIFISM
-	gain_text = span_danger("Вы чувствуете, как любая мысль о насилии отвращает вас!")
-	lose_text = span_notice("Кажется, вы уже и не такой беззащитный и можете дать отпор, как раньше.")
+	gain_text = span_danger("Сама мысль о насилии вызывает у вас отвращение!")
+	lose_text = span_notice("Вы чувствуете, что снова можете постоять за себя.")
 	medical_record_text = "Пациент необычайно пацифичен и не может заставить себя причинить физический вред кому-либо."
 	hardcore_value = 6
 	mail_goodies = list(/obj/effect/spawner/random/decoration/flower, /obj/effect/spawner/random/contraband/cannabis) // flower power

@@ -35,7 +35,7 @@
 /datum/mood_event/food/add_effects(quality = FOOD_QUALITY_NORMAL, timeout_mod = 1)
 	mood_change = calculate_mood_change(quality)
 	timeout *= timeout_mod
-	description = "Эта была [GLOB.food_quality_description[quality]] пища."
+	description = "Это была [GLOB.food_quality_description[quality]] пища."
 
 /datum/mood_event/food/be_refreshed(datum/mood/home, quality, timeout_mod)
 	var/old_mood = mood_change

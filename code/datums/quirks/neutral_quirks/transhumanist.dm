@@ -161,11 +161,11 @@
 // 	if(!slot_string)
 // 		return
 // 	if(isbodypart(old_part))
-// 		to_chat(quirk_holder, span_bolddanger("Ваша конечность, [slot_string], была заменена на руку робота. Чтобы починить ее, вместо швов и регенеративных сеток нужно использовать сварочный инструмент и кабели."))
+// 		to_chat(quirk_holder, span_bolddanger("Ваша конечность ([slot_string]) была заменена на роботизированную. Чтобы починить её, вместо швов и регенеративных сеток нужно использовать сварочный инструмент и кабели."))
 // 	else if (old_part.name == "eyes")
 // 		to_chat(quirk_holder, span_bolddanger("Вы заменили свои глаза на фонарики, а не камеры. Вы ни черта не видите!"))
 // 	else if (isorgan(old_part))
-// 		to_chat(quirk_holder, span_bolddanger("Ваша замена [slot_string] делает вас на шаг ближе к идеалу синтетики, но вам не хватает совсем чуть-чуть."))
+// 		to_chat(quirk_holder, span_bolddanger("Ваш новый орган ([slot_string]) делает вас на шаг ближе к совершенству синтетиков, но вы чувствуете, что до идеала ещё далеко."))
 
 // /datum/quirk/transhumanist/remove()
 // 	if(isnull(old_part))

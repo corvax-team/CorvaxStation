@@ -6,5 +6,5 @@
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = span_notice("ХОЧУ ЖРАААААТЬ!!")
 	lose_text = span_danger("Кажется вы больше не хотите ЖРАААААТЬ.")
-	medical_record_text = "Пациент ценит блюда и напитки выше среднего."
+	medical_record_text = "Пациент ценит еду и напитки сильнее, чем большинство людей."
 	mail_goodies = list(/obj/effect/spawner/random/food_or_drink/dinner)

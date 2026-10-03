@@ -4,7 +4,7 @@
 	icon = FA_ICON_DISEASE
 	value = -12
 	gain_text = span_danger("Вы чувствуете, будто растворяетесь...")
-	lose_text = span_notice("Вы внезапно почувствовали себя более ощутимым.")
+	lose_text = span_notice("Вы внезапно ощущаете себя более материальным.")
 	medical_record_text = "Пациент страдает аномальным хроническим заболеванием, которое требует постоянного приема медикаментов для поддержания состояния под контролем."
 	hardcore_value = 12
 	mail_goodies = list(/obj/item/storage/pill_bottle/sansufentanyl)

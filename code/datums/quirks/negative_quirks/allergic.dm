@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(allergy_reagent_blacklist, typecacheof(list(
 	icon = FA_ICON_PRESCRIPTION_BOTTLE
 	value = -6
 	gain_text = span_danger("Вы чувствуете, как меняется ваша иммунная система.")
-	lose_text = span_notice("Вы чувствуете, как ваша иммунная система приходит норму.")
+	lose_text = span_notice("Вы чувствуете, как ваша иммунная система приходит в норму.")
 	medical_record_text = "Иммунная система пациента бурно реагирует на определенные химические вещества."
 	hardcore_value = 3
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
