@@ -11,7 +11,7 @@
 		qdel(src)
 		return
 
-	grav(rand(0,3), rand(2,3), 50, 25)
+	grav(rand(0,3), rand(2,3), 50, 0) // CorvaxStation edit : turf_removal_chance = 0
 
 	//Throwing stuff around!
 	for(var/obj/O in range(2,src))

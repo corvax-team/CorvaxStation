@@ -1961,7 +1961,8 @@
 /// Called when surgical state changes so we can react to it
 /obj/item/bodypart/proc/update_surgical_state(old_state, changed_states)
 	SEND_SIGNAL(src, COMSIG_BODYPART_UPDATING_SURGERY_STATE, old_state, surgery_state, changed_states)
-	if((surgery_state & changed_states) == changed_states)
+
+	if(old_state == surgery_state)
 		return
 
 	if(HAS_ANY_SURGERY_STATE(changed_states, SURGERY_ORGANS_CUT|ALL_SURGERY_VESSEL_STATES))
@@ -1971,9 +1972,13 @@
 		return
 
 	SEND_SIGNAL(owner, COMSIG_LIVING_UPDATING_SURGERY_STATE, old_state, surgery_state, changed_states)
-	if(HAS_SURGERY_STATE(surgery_state, ALL_SURGERY_FISH_STATES(body_zone)))
-		owner.AddComponent(/datum/component/fishing_spot, /datum/fish_source/surgery) // no-op if they already have one
-	else if(HAS_SURGERY_STATE(old_state, ALL_SURGERY_FISH_STATES(body_zone)))
+
+	var/has_fish_now    = HAS_SURGERY_STATE(surgery_state, ALL_SURGERY_FISH_STATES(body_zone))
+	var/had_fish_before = HAS_SURGERY_STATE(old_state,     ALL_SURGERY_FISH_STATES(body_zone))
+
+	if(has_fish_now && !had_fish_before)
+		owner.AddComponent(/datum/component/fishing_spot, /datum/fish_source/surgery)
+	else if(!has_fish_now && had_fish_before)
 		qdel(owner.GetComponent(/datum/component/fishing_spot))
 
 /obj/item/bodypart/vv_edit_var(vname, vval)
