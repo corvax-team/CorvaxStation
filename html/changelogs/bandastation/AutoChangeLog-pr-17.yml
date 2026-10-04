@@ -1,0 +1,4 @@
+author: "YesImMorty"
+delete-after: True
+changes:
+  - bugfix: "\"Волна отчаяния\" еретика больше не утверждает, что её нельзя применить в оковах"
