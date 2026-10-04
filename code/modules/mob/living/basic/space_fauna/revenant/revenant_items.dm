@@ -33,7 +33,7 @@
 	. = ..()
 	if(inert)
 		return
-	visible_message(span_notice("[declent_ru(ACCUSATIVE)] при ударе распадается на частицы, которые исчезают, превращаясь в ничто."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] при ударе распадается на частицы, которые исчезают, превращаясь в ничто."))
 	SEND_SIGNAL(src, COMSIG_RESIDUE_DISPERSE)
 	qdel(src)
 

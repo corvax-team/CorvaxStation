@@ -41,7 +41,7 @@
 		description = "[friend.name] слишком приятный для этой станции."
 		return
 
-	description = "[friend.name] был очень добр[genderize_ru(friend.name, "", "а", "ы", "")] ко мне."
+	description = genderize_decode(friend, "[friend.name] был%(,а,о,и)% очень добр%(,а,о,ы)% ко мне.")
 
 /datum/mood_event/besthug
 	description = "Весело находиться рядом с кем-то, не могу нарадоваться!"
@@ -55,7 +55,7 @@
 		return
 	if(HAS_PERSONALITY(owner, /datum/personality/callous))
 		mood_change = 0
-		description = "[friend.name] слишком хорош[genderize_ru(friend.name, "", "а", "и", "")] для этой станции."
+		description = genderize_decode(friend, "[friend.name] слишком хорош%(,а,о,и)% для этой станции.")
 		return
 
 	description = "Мне весело находиться рядом с [friend.declent_ru(INSTRUMENTAL)], не могу нарадоваться!"
@@ -225,7 +225,7 @@
 	hidden = TRUE
 
 /datum/mood_event/creeping
-	description = "Голоса отпустили свои крючки с моего разума! Я снова свободен!" //creeps get it when they are around their obsession
+	description = "Голоса выпустили мой разум из своих когтей! Я снова свободен!" //creeps get it when they are around their obsession
 	mood_change = 18
 	timeout = 3 SECONDS
 	hidden = TRUE
@@ -298,7 +298,7 @@
 	event_flags = MOOD_EVENT_SPIRITUAL
 
 /datum/mood_event/clownshoes
-	description = "Эти ботинки наследие клоунов, и я никогда их не сниму!"
+	description = "Эти ботинки - наследие клоунов, и я никогда их не сниму!"
 	mood_change = 3
 
 /datum/mood_event/sacrifice_good
@@ -330,12 +330,12 @@
 	event_flags = MOOD_EVENT_ART
 
 /datum/mood_event/bottle_flip
-	description = "То, как приземлилась эта бутылка, было приятным."
+	description = "Бутылка приземлилась как надо. Приятно."
 	mood_change = 2
 	timeout = 3 MINUTES
 
 /datum/mood_event/hope_lavaland
-	description = "Какая необычная эмблема. Она вселяет надежду в моё будущее."
+	description = "Какая необычная эмблема. Она вселяет в меня надежду на будущее."
 	mood_change = 6
 
 /datum/mood_event/hope_lavaland/add_effects(...)
@@ -345,7 +345,7 @@
 		return
 
 /datum/mood_event/confident_mane
-	description = "Я более уверен с полной волос головой."
+	description = "С пышной шевелюрой я чувствую себя увереннее."
 	mood_change = 2
 
 /datum/mood_event/holy_consumption
@@ -377,7 +377,7 @@
 	if(HAS_PERSONALITY(owner, /datum/personality/callous) || HAS_PERSONALITY(owner, /datum/personality/misanthropic))
 		mood_change = -2
 		if(helper)
-			description = "Они должны были сами достать свою задницу из своих проблем."
+			description = "Могли бы и сами справиться."
 		else
 			description = "Я мог встать сам."
 
@@ -395,7 +395,7 @@
 	event_flags = MOOD_EVENT_WHIMSY
 
 /datum/mood_event/down_low
-	description = "ХА! Вот глупыш, у них не было и шанса..."
+	description = "ХА! Вот лопух, у него не было ни единого шанса..."
 	mood_change = 4
 	timeout = 90 SECONDS
 	event_flags = MOOD_EVENT_WHIMSY
@@ -410,7 +410,7 @@
 	mood_change = 6
 
 /datum/mood_event/kiss
-	description = "Воздушный поцелуй от кого-то, я настоящая находка!"
+	description = "Кто-то послал мне воздушный поцелуй, похоже, я завидная партия!"
 	mood_change = 1.5
 	timeout = 2 MINUTES
 
@@ -420,10 +420,10 @@
 	if(direct)
 		description = "Поцелуй от [beau.declent_ru(GENITIVE)], ахх!!"
 	else
-		description = "Воздушный поцелуй от [beau.declent_ru(GENITIVE)], я настоящая находка!"
+		description = "Воздушный поцелуй от [beau.declent_ru(GENITIVE)], похоже, я завидная партия!"
 
 /datum/mood_event/honorbound
-	description = "Следование кодесу чести приносит удовлетворение!"
+	description = "Следование кодексу чести приносит удовлетворение!"
 	mood_change = 4
 
 /datum/mood_event/et_pieces
@@ -532,7 +532,7 @@
 	if(fish.status == FISH_DEAD)
 		description = "Какой-нибудь мусорщик наверняка найдет применение останкам [declent_ru(fish.name, GENITIVE)]. Как прагматично."
 	else
-		description = "Вернулся к бремени бездны. Но действительно ли это милосердие, [declent_ru(fish.name, NOMINATIVE)]? Всегда найдется рыба покрупнее..."
+		description = "Назад, к бремени глубин. Но действительно ли это милосердие, [declent_ru(fish.name, NOMINATIVE)]? Всегда найдется рыба покрупнее..."
 
 /datum/mood_event/fish_petting
 	description = "Было приятно погладить рыбу."
@@ -544,7 +544,7 @@
 	if(!morbid)
 		description = "Было приятно погладить [fish.declent_ru(ACCUSATIVE)]."
 	else
-		description = "Я глажу [fish.declent_ru(ACCUSATIVE)], когда [fish.ru_p_they()] извиваются под моими прикосновениями, пребывая в блаженном неведении о том, насколько жесток этот мир."
+		description = "Я глажу [fish.declent_ru(ACCUSATIVE)], и рыба извивается под моими прикосновениями, пребывая в блаженном неведении о том, насколько жесток этот мир."
 
 /datum/mood_event/kobun
 	description = "Вы все любимы Вселенной. Я не одинок, как и вы."
@@ -586,7 +586,7 @@
 
 ///Wizard cheesy grand finale - what the wizard gets
 /datum/mood_event/madness_elation
-	description = "Безумие - величайшее из благославлений..."
+	description = "Безумие - величайшее из благословений..."
 	mood_change = 200
 
 /datum/mood_event/prophat
@@ -690,7 +690,7 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/creative_framing
-	description = "Развешанные картины действительно объединяют комнату."
+	description = "Картины на стенах и правда задают стиль всей комнате."
 	mood_change = 2
 	timeout = 5 MINUTES
 

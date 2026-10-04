@@ -200,7 +200,7 @@
 /datum/status_effect/heretic_passive/blade/proc/z_impact_react(datum/source, levels, turf/fell_on)
 	SIGNAL_HANDLER
 	new /obj/effect/temp_visual/mook_dust(fell_on)
-	owner.visible_message(span_notice("[owner.declent_ru(NOMINATIVE)] безопасно, и весьма стильно, приземляется на [fell_on.declent_ru(ACCUSATIVE)]!"))
+	owner.visible_message(span_notice("[owner.declent_ru(NOMINATIVE)] благополучно и весьма стильно приземляется на [fell_on.declent_ru(ACCUSATIVE)]!"))
 	INVOKE_ASYNC(owner, TYPE_PROC_REF(/atom, SpinAnimation), 0.5 SECONDS, 0)
 	INVOKE_ASYNC(owner, TYPE_PROC_REF(/mob/, emote), "flip")
 	return ZIMPACT_CANCEL_DAMAGE | ZIMPACT_NO_MESSAGE | ZIMPACT_NO_SPIN

@@ -29,7 +29,7 @@
 /datum/action/cooldown/spell/pointed/mind_gate/cast(mob/living/carbon/human/cast_on)
 	. = ..()
 	if(cast_on.can_block_magic(antimagic_flags))
-		to_chat(cast_on, span_notice("Ваш разум чувствуется запертым."))
+		to_chat(cast_on, span_notice("Ваш разум словно заперт."))
 		to_chat(owner, span_warning("Их разум не открывается, но и ваш тоже."))
 		return FALSE
 
@@ -45,7 +45,7 @@
 	/// The duration of these effects are based on sanity, mainly for flavor but also to make it a weaker alpha strike
 	var/maximum_duration = 15 SECONDS
 	var/mind_gate_duration = ((SANITY_MAXIMUM - cast_on.mob_mood.sanity) / (SANITY_MAXIMUM - SANITY_INSANE)) * maximum_duration  + 1 SECONDS
-	to_chat(cast_on, span_warning("Твои глаза кричат от боли, из ушей течет кровь, а губы сжимаются! ЛУНА УЛЫБАЕТСЯ ТЕБЕ!"))
+	to_chat(cast_on, span_warning("Ваши глаза вопят от боли, из ушей течет кровь, а губы смыкаются! ЛУНА УЛЫБАЕТСЯ ВАМ!"))
 	cast_on.adjust_temp_blindness(mind_gate_duration)
 	cast_on.set_eye_blur_if_lower(mind_gate_duration + 1 SECONDS)
 

@@ -142,7 +142,7 @@
 
 	user.visible_message(
 		message = span_danger("Из под [door.declent_ru(GENITIVE)] с хлопком выскальзывает [user.declent_ru(NOMINATIVE)]!"),
-		self_message = span_notice("Вы с хлопком выскальзываете из под [door.declent_ru(GENITIVE)]!"),
+		self_message = span_notice("Вы с хлопком выскальзываете из-под [door.declent_ru(GENITIVE)]!"),
 		blind_message = span_hear("Вы слышите хлопок."),
 	)
 

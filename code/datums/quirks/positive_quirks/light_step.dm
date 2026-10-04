@@ -4,7 +4,7 @@
 	icon = FA_ICON_SHOE_PRINTS
 	value = 4
 	mob_trait = TRAIT_LIGHT_STEP
-	gain_text = span_notice("Вы ходите с большей гибкостью.")
-	lose_text = span_danger("Вы начинаете рыскать повсюду, как варвар.")
-	medical_record_text = "Ловкость пациента отражает его сильную способность к скрытности."
+	gain_text = span_notice("Ваша походка становится чуть грациознее.")
+	lose_text = span_danger("Вы начинаете топать, как варвар.")
+	medical_record_text = "Ловкость пациента выдаёт в нём недюжинные способности к скрытности."
 	mail_goodies = list(/obj/item/clothing/shoes/sandal)

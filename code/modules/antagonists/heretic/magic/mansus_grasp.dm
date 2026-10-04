@@ -58,7 +58,7 @@
 		carbon_hit.mob_light(range = 1.5, power = 2.5, color = COLOR_CULT_RED, duration = 0.5 SECONDS)
 		playsound(carbon_hit, 'sound/effects/magic/curse.ogg', 50, TRUE)
 
-		to_chat(caster, span_warning("Нечестивая сила вмешивается, когда вы наносите [carbon_hit], поглощая большую часть эффекта!"))
+		to_chat(caster, span_warning("Нечестивая сила вмешивается, когда вы хватаете [carbon_hit.declent_ru(ACCUSATIVE)], и поглощает большую часть эффекта!"))
 		to_chat(carbon_hit, span_warning("Когда [caster.declent_ru(NOMINATIVE)] хватает вас потусторонними силами, ваша кровавая магия поглощает большую часть эффектов!"))
 		carbon_hit.balloon_alert_to_viewers("поглощено!")
 		return TRUE
@@ -106,11 +106,11 @@
 	remove_hand_with_no_refund(user)
 
 /obj/item/melee/touch_attack/mansus_fist/ignition_effect(atom/to_light, mob/user)
-	. = span_rose("[capitalize(user.declent_ru(NOMINATIVE))] без труда щелкает своими пальцами возле [to_light.declent_ru(GENITIVE)], зажигая мистической энергией. Чертовски круто!")
+	. = span_rose("[capitalize(user.declent_ru(NOMINATIVE))] небрежно щелкает пальцами возле [to_light.declent_ru(GENITIVE)], зажигая мистической энергией. Чертовски круто!")
 	remove_hand_with_no_refund(user)
 
 /obj/item/melee/touch_attack/mansus_fist/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] накрывает своё лицо своей болезненно выглядящей рукой! Похоже, что они пытаются совершить самоубийство!"))
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] закрывает лицо своей болезненного вида рукой! Похоже, это попытка самоубийства!"))
 	var/mob/living/carbon/carbon_user = user //iscarbon already used in spell's parent
 	var/datum/action/cooldown/spell/touch/mansus_grasp/source = spell_which_made_us?.resolve()
 	if(QDELETED(source) || !IS_HERETIC(user))

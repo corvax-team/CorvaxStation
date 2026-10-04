@@ -20,7 +20,7 @@
 
 /datum/spellbook_entry/disintegrate
 	name = "Smite"
-	desc = "Заряжает вашу руку нечестивой энергией, которая может быть использована для того, чтобы заставить тронутую жертву жестоко взорваться."
+	desc = "Заряжает вашу руку нечестивой энергией: жертва, которой вы коснетесь, разлетится на куски."
 	spell_type = /datum/action/cooldown/spell/touch/smite
 	category = SPELLBOOK_CATEGORY_OFFENSIVE
 
@@ -60,7 +60,7 @@
 
 /datum/spellbook_entry/teslablast
 	name = "Tesla Blast"
-	desc = "Зарядите заряд тесла-дуги и выпустите его в случайную ближайшую цель! Пока она заряжается, вы можете свободно перемещаться. Дуга проскакивает между целями и может сбить их с ног."
+	desc = "Накопите разряд тесла-дуги и выпустите его в случайную ближайшую цель! Пока он накапливается, вы можете свободно перемещаться. Дуга проскакивает между целями и может сбить их с ног."
 	spell_type = /datum/action/cooldown/spell/charged/beam/tesla
 	category = SPELLBOOK_CATEGORY_OFFENSIVE
 
@@ -95,8 +95,8 @@
 
 /datum/spellbook_entry/splattercasting
 	name = "Splattercasting"
-	desc = "Значительно снижает время действия всех заклинаний, но каждое из них требует затрат крови, а также естественного \
-		ее высасывания из вас с течением времени. Вы можете пополнять ее запасы из своих жертв, в частности из их шей."
+	desc = "Значительно сокращает время восстановления всех заклинаний, но каждое из них требует затрат крови, к тому же кровь \
+		сама постепенно вытекает из вас. Вы можете пополнять ее запасы из своих жертв, в частности из их шей."
 	spell_type =  /datum/action/cooldown/spell/splattercasting
 	category = SPELLBOOK_CATEGORY_OFFENSIVE
 	no_coexistence_typecache = list(/datum/action/cooldown/spell/lichdom, /datum/spellbook_entry/ghostliness)

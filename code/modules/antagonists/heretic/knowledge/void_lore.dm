@@ -418,7 +418,7 @@
 		return NONE
 
 	ascended_heretic.visible_message(
-		span_danger("Буря Пустоты, окружающая [ascended_heretic.declent_ru(GENITIVE)] отклоняет [hitting_projectile.declent_ru(ACCUSATIVE)]!"),
+		span_danger("Буря Пустоты, окружающая [ascended_heretic.declent_ru(GENITIVE)], отклоняет [hitting_projectile.declent_ru(ACCUSATIVE)]!"),
 		span_userdanger("Буря Пустоты защитила вас от [hitting_projectile.declent_ru(ACCUSATIVE)]!"),
 	)
 	playsound(ascended_heretic, SFX_VOID_DEFLECT, 75, TRUE)

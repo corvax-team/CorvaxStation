@@ -495,19 +495,19 @@
 
 	if(!target.has_dna())
 		if(verbose)
-			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] несовместимо с нашей биологией."))
+			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] несовместима с нашей биологией."))
 		return FALSE
 	if(has_profile_with_dna(target.dna))
 		if(verbose)
-			to_chat(user, span_warning("Мы уже имеем это ДНК в нашем хранилище!"))
+			to_chat(user, span_warning("Эта ДНК уже есть в нашем хранилище!"))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_NO_DNA_COPY))
 		if(verbose)
-			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] несовместимо с нашей биологией."))
+			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] несовместима с нашей биологией."))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_BADDNA))
 		if(verbose)
-			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] разрушено до неузнаваемости!"))
+			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] разрушена до неузнаваемости!"))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_HUSK))
 		if(verbose)

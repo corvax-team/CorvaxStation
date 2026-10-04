@@ -128,7 +128,7 @@
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/vortex = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/hallucination
-	name = "Переработанное галюциногенное ядро"
+	name = "Переработанное галлюциногенное ядро"
 	description = "Мы создаём лучшую версию космических наркотиков, отправьте нам ядро для воспроизведения его эффектов."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/hallucination = TRUE)
 

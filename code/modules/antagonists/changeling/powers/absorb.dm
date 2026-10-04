@@ -1,6 +1,6 @@
 /datum/action/changeling/absorb_dna
 	name = "Absorb DNA"
-	desc = "Поглотить ДНК нашей жертвы. Для поглощения нужно душить их."
+	desc = "Поглощает ДНК нашей жертвы. Для этого жертву нужно душить."
 	button_icon_state = "absorb_dna"
 	chemical_cost = 0
 	dna_cost = CHANGELING_POWER_INNATE
@@ -108,7 +108,7 @@
 				continue
 			for(var/datum/mind/conspirator as anything in other_owners)
 				changeling.antag_memory += " Objective Conspirator: [conspirator.name]."
-	changeling.antag_memory += " Это все, что имел [target]. "
+	changeling.antag_memory += " Это все, что было у [target.declent_ru(GENITIVE)]. "
 
 	//Some of target's recent speech, so the changeling can attempt to imitate them better.
 	//Recent as opposed to all because rounds tend to have a LOT of text.
@@ -127,7 +127,7 @@
 
 	var/datum/antagonist/changeling/target_ling = IS_CHANGELING(target)
 	if(target_ling)//If the target was a changeling, suck out their extra juice and objective points!
-		to_chat(owner, span_boldnotice("[capitalize(target.declent_ru(NOMINATIVE))] были одними из нас. Мы поглотили их силу."))
+		to_chat(owner, span_boldnotice(genderize_decode(target, "[capitalize(target.declent_ru(NOMINATIVE))] был%(,а,о,и)% одн%(им,ой,им,ими)% из нас. Мы поглотили эту силу.")))
 
 		// Gain half of their genetic points.
 		var/genetic_points_to_add = round(target_ling.total_genetic_points / 2)

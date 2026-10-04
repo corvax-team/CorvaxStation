@@ -4,9 +4,9 @@
 	icon = FA_ICON_SPRAY_CAN
 	value = 4
 	mob_trait = TRAIT_TAGGER
-	gain_text = span_notice("Вы знаете, как эффективно и быстро размечать стены.")
-	lose_text = span_danger("Вы забыли, как правильно размечать стены.")
-	medical_record_text = "Пациент недавно был замечен в связи с возможным инцидентом ненадлежащего распыления краски."
+	gain_text = span_notice("Вы знаете, как быстро и эффективно расписывать стены.")
+	lose_text = span_danger("Вы забыли, как правильно расписывать стены.")
+	medical_record_text = "Пациент недавно поступал с подозрением на вдыхание паров краски."
 	mail_goodies = list(
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/canvas/nineteen_nineteen,

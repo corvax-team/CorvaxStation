@@ -61,7 +61,7 @@
 
 /datum/spellbook_entry/item/contract
 	name = "Contract of Apprenticeship"
-	desc = "Магический контракт, привязывающий ученика волшебника к вашей службе, при использовании вызовет его на вашу сторону."
+	desc = "Магический контракт, привязывающий ученика волшебника к вашей службе, при использовании призовет его к вам."
 	item_path = /obj/item/antag_spawner/contract
 	category = SPELLBOOK_CATEGORY_ASSISTANCE
 

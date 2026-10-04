@@ -221,9 +221,9 @@
 			total_cheese_goal_met = TRUE
 			to_chat(owner, span_revenbignotice("ДА! СЫР! СЫР ДЛЯ ВСЕХ! ТАКОЙ ГРАНДИОЗНЫЙ ПРАЗДНИК! ТЫ ПОЛУЧИШЬ СВОЙ ПРИЗ, МОЙ ЧЕМПИОН!!"))
 		else
-			to_chat(owner, span_revennotice("Вы слышите безумный смех, когда на вас обрушивается непреодолимый запах прекрасного чеддера..."))
+			to_chat(owner, span_revennotice("Вы слышите безумный смех, когда на вас обрушивается всепоглощающий запах прекрасного чеддера..."))
 	else if (total_cheese_sacrificed)
-		to_chat(owner, span_revendanger("Ты радуешь меня, смертный. Продолжай присылать сыр, мой пир все еще нуждается в еще <b>[CHEESE_SACRIFICE_GOAL - total_cheese_sacrificed]</b>, чтобы быть великолепным..."))
+		to_chat(owner, span_revendanger("Ты радуешь меня, смертный. Продолжай слать сыр: чтобы мой пир стал поистине грандиозным, нужно еще <b>[CHEESE_SACRIFICE_GOAL - total_cheese_sacrificed]</b>..."))
 	rune = null
 	times_completed++
 	set_new_area()

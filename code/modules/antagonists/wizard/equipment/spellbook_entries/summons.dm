@@ -113,7 +113,7 @@
 	GLOB.mass_teaching.equip_all_affected()
 
 	var/item_entry = istype(chosen_entry, /datum/spellbook_entry/item)
-	to_chat(user, span_hypnophrase("Вы [item_entry ? "даровали всем силу" : "обучили всех приемами"] [chosen_spell_name]!"))
+	to_chat(user, span_hypnophrase("Вы [item_entry ? "даровали всем силу" : "обучили всех заклинанию"] [chosen_spell_name]!"))
 	message_admins("[ADMIN_LOOKUPFLW(user)] gave everyone the [item_entry ? "item" : "spell"] \"[chosen_spell_name]\"!")
 	user.log_message("has gave everyone the [item_entry ? "item" : "spell"] \"[chosen_spell_name]\"!", LOG_GAME)
 

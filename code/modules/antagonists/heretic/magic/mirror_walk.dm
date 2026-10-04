@@ -45,7 +45,7 @@
 
 	if(owner_turf.is_blocked_turf(exclude_mobs = TRUE))
 		if(feedback)
-			to_chat(owner, span_warning("Что-то блокирует вас от [we_are_phasing ? "выход из мира": "входа в мир"] зеркал здесь!"))
+			to_chat(owner, span_warning("Что-то мешает вам [we_are_phasing ? "выйти из мира": "войти в мир"] зеркал здесь!"))
 		return FALSE
 
 	return TRUE
@@ -64,7 +64,7 @@
 		return
 
 	jaunter.Beam(nearby_reflection, icon_state = "light_beam", time = phase_out_time)
-	nearby_reflection.visible_message(span_warning("[capitalize(nearby_reflection.declent_ru(NOMINATIVE))] начинают мерцать и слегка дрожать!"))
+	nearby_reflection.visible_message(span_warning("[capitalize(nearby_reflection.declent_ru(NOMINATIVE))] начинает мерцать и слегка дрожать!"))
 	if(!do_after(jaunter, phase_out_time, nearby_reflection, IGNORE_USER_LOC_CHANGE|IGNORE_INCAPACITATED, cog_icon = null))
 		return
 

@@ -328,10 +328,10 @@
 
 	var/mob/living/to_reset = bad_dog.resolve()
 
-	to_chat(owner, span_mansus("Вы предлагаете изменить личность [to_reset]..."))
+	to_chat(owner, span_mansus("Вы пытаетесь сбросить личность [to_reset]..."))
 	var/mob/chosen_one = SSpolling.poll_ghost_candidates("Хотите ли вы играть за [span_danger("[owner.real_name]")] [span_notice(to_reset.name)]?", check_jobban = ROLE_PAI, poll_time = 10 SECONDS, alert_pic = to_reset, jump_target = owner, role_name_text = to_reset.name, amount_to_pick = 1)
 	if(isnull(chosen_one))
-		to_chat(owner, span_mansus("Ваш запрос о смене личности [to_reset], судя по всему, был отклонён... Похоже пока придётся мириться с этим."))
+		to_chat(owner, span_mansus("Ваш запрос о смене личности [to_reset], судя по всему, был отклонён... Похоже, пока придётся с этим мириться."))
 		StartCooldown()
 		return FALSE
 	to_chat(to_reset, span_mansus("Ваш призыватель перезагрузил вас, и вашим телом завладел призрак. Похоже, он был не очень доволен вашими действиями."))

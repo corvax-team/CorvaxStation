@@ -13,7 +13,7 @@
 	timeout = 11 SECONDS
 
 /datum/mood_event/eldritch_painting/weeping_heretic
-	description = "Его страдания воодушляют меня!"
+	description = "Его страдания воодушевляют меня!"
 	mood_change = 5
 	timeout = 3 MINUTES
 

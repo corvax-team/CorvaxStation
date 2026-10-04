@@ -110,7 +110,7 @@
 		QDEL_NULL(second_rune)
 
 /obj/item/melee/touch_attack/star_touch/ignition_effect(atom/to_light, mob/user)
-	. = span_rose("[capitalize(user.declent_ru(NOMINATIVE))] без труда щелкает своими пальцами возле [to_light.declent_ru(GENITIVE)], зажигая мистической энергией. Чертовски круто!")
+	. = span_rose("[capitalize(user.declent_ru(NOMINATIVE))] небрежно щелкает пальцами возле [to_light.declent_ru(GENITIVE)], зажигая мистической энергией. Чертовски круто!")
 	remove_hand_with_no_refund(user)
 
 /obj/item/melee/touch_attack/star_touch/attack_self(mob/living/user)

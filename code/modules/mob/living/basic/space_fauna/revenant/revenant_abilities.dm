@@ -89,7 +89,7 @@
 //Overload Light: Breaks a light that's online and sends out lightning bolts to all nearby people.
 /datum/action/cooldown/spell/aoe/revenant/overload
 	name = "Перегрузка света"
-	desc = "Направляет большое количество эссенции на близлежащие лампы, заставляя их поражать электрическом окружающих."
+	desc = "Направляет большое количество эссенции на близлежащие лампы, заставляя их бить током всех, кто рядом."
 	button_icon_state = "overload_lights"
 	cooldown_time = 20 SECONDS
 
@@ -347,7 +347,7 @@
 //Blight: Infects nearby humans and in general messes living stuff up.
 /datum/action/cooldown/spell/aoe/revenant/blight
 	name = "Порча"
-	desc = "Приводит к вымиранию близлежащих живых существ."
+	desc = "Заставляет чахнуть всё живое поблизости."
 	button_icon_state = "blight"
 	cooldown_time = 20 SECONDS
 
