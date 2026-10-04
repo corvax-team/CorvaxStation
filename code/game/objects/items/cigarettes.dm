@@ -189,6 +189,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 //////////////////
 //FINE SMOKABLES//
 //////////////////
+/datum/config_entry/string/cigarette_blocked_reagents
+	config_entry_value = ""
 
 /obj/item/cigarette
 	name = "cigarette"
@@ -247,6 +249,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	VAR_FINAL/how_long_have_we_been_smokin = 0 SECONDS
 	/// Which people ate cigarettes and how many
 	var/static/list/cigarette_eaters = list()
+	var/static/list/dangerous_reagents_cache // CorvaxStation edit
+	var/static/dangerous_reagents_cache_source // CorvaxStation edit
 
 /obj/item/cigarette/Initialize(mapload)
 	. = ..()
@@ -414,6 +418,38 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	light()
 
+	// CorvaxStation edit start
+/obj/item/cigarette/proc/get_dangerous_reagents()
+	var/raw = CONFIG_GET(string/cigarette_blocked_reagents)
+	if(raw == dangerous_reagents_cache_source && !isnull(dangerous_reagents_cache))
+		return dangerous_reagents_cache
+
+	var/list/parsed = list()
+	if(length(raw))
+		for(var/part in splittext(raw, ","))
+			var/path_str = trim(part)
+			if(!length(path_str))
+				continue
+			var/path = text2path(path_str)
+			if(!ispath(path, /datum/reagent))
+				stack_trace("cigarette_blocked_reagents: '[path_str]' is not a reagent path, skipping")
+				continue
+			parsed += path
+
+	dangerous_reagents_cache_source = raw
+	dangerous_reagents_cache = parsed
+	return parsed
+
+/obj/item/cigarette/proc/has_dangerous_reagents()
+	var/list/blocked = get_dangerous_reagents()
+	if(!length(blocked))
+		return FALSE
+	for(var/reagent_type in blocked)
+		if(reagents?.has_reagent(reagent_type))
+			return TRUE
+	return FALSE
+	// CorvaxStation edit end
+
 /// Lights the cigarette with given flavor text.
 /obj/item/cigarette/proc/light(flavor_text = null)
 	if(lit)
@@ -433,10 +469,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	damtype = BURN
 	force = 4
 
-	if(reagents?.spark_act(0, NONE, banned_reagents = /datum/reagent/flash_powder) & SPARK_ACT_DESTRUCTIVE)
+	// CorvaxStation edit start
+	var/has_blocked_reagents = has_dangerous_reagents()
+	if(has_blocked_reagents)
+		reagents.flags |= NO_REACT
+	else if(reagents?.spark_act(0, NONE, banned_reagents = /datum/reagent/flash_powder) & SPARK_ACT_DESTRUCTIVE)
 		usr?.log_message("lit a rigged cigarette", LOG_VICTIM)
 		qdel(src)
 		return
+
+	reagents.handle_reactions()
+	if(QDELETED(src))
+		return
+	// CorvaxStation edit end
 
 	// Custom handling for the hallucination effect
 	if(reagents?.has_reagent(/datum/reagent/flash_powder))
@@ -544,7 +589,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/cigarette/proc/handle_reagents(seconds_per_tick)
 	if(!reagents.total_volume)
 		return
-	reagents.expose_temperature(heat, 0.05)
+	// CorvaxStation edit start
+	if(!has_dangerous_reagents())
+		reagents.expose_temperature(heat, 0.05)
+	// CorvaxStation edit end
 	if(!reagents.total_volume) //may have reacted and gone to 0 after expose_temperature
 		return
 

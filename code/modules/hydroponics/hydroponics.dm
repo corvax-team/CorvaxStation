@@ -183,7 +183,7 @@
 	AddElement(/datum/element/simple_rotation)
 	AddComponent(/datum/component/plumbing/hydroponics)
 	AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/hydroponics), only_root_path = TRUE))
-	// AddComponent(/datum/component/fishing_spot, /datum/fish_source/hydro_tray) // BANDASTATION REMOVAL
+	AddComponent(/datum/component/fishing_spot, /datum/fish_source/hydro_tray)
 
 /obj/machinery/hydroponics/constructable/RefreshParts()
 	. = ..()
