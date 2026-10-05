@@ -44,6 +44,7 @@
 	drop_sound = 'sound/items/handling/toolbelt_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbelt_pickup.ogg'
 	storage_type = /datum/storage/utility_belt
+	w_class = WEIGHT_CLASS_NORMAL // CorvaxStation edit
 
 /obj/item/storage/belt/utility/chief
 	name = "chief engineer's toolbelt"
