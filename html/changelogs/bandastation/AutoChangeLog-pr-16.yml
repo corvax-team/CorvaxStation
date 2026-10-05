@@ -1,4 +1,0 @@
-author: "YesImMorty"
-delete-after: True
-changes:
-  - server: "Добавлен конфиг SS_CENTRAL_PUBLIC_URL для ссылок привязки Discord."
