@@ -193,6 +193,21 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_4_POINTS)
 	announce_channels = list(RADIO_CHANNEL_SCIENCE)
 
+/datum/techweb_node/justice
+	display_name = "экзоскелет Джастис"
+	description = "Нелегальный набор экзоскелета Джастис."
+	unlocked_designs = list(
+		/datum/design/justice_armor,
+		/datum/design/justice_chassis,
+		/datum/design/justice_torso,
+		/datum/design/justice_left_arm,
+		/datum/design/justice_right_arm,
+		/datum/design/justice_left_leg,
+		/datum/design/justice_right_leg,
+	)
+	node_flags = parent_type::node_flags | TECHWEB_NODE_HIDDEN
+	illegal_mech_node = TRUE
+
 /datum/techweb_node/mech_energy_guns
 	display_name = "Энергетическое оружие экзоскелета"
 	description = "Увеличенные версии энергетического оружия, оптимизированные для использования в экзоскелетах."

@@ -388,6 +388,48 @@
 	icon_state = "savannah_ivanov_armor"
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 30, /datum/material/uranium = SHEET_MATERIAL_AMOUNT * 12.5, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 10)
 
+// CorvaxStation edit : Justice revival
+/obj/item/mecha_parts/chassis/justice
+	name = "\improper Justice chassis"
+	construct_type = /datum/component/construction/unordered/mecha_chassis/justice
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 12.5)
+
+/obj/item/mecha_parts/part/justice_torso
+	name="\improper Justice torso"
+	desc="A Justice torso part."
+	icon_state = "justice_torso"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 10, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 5, /datum/material/gold = SHEET_MATERIAL_AMOUNT, /datum/material/silver = SHEET_MATERIAL_AMOUNT)
+
+/obj/item/mecha_parts/part/justice_left_arm
+	name="\improper Justice left arm"
+	desc="A Justice left arm."
+	icon_state = "justice_l_arm"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 7.5, /datum/material/gold = HALF_SHEET_MATERIAL_AMOUNT, /datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT)
+
+/obj/item/mecha_parts/part/justice_right_arm
+	name="\improper Justice right arm"
+	desc="A Justice left arm."
+	icon_state = "justice_r_arm"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 7.5, /datum/material/gold = HALF_SHEET_MATERIAL_AMOUNT, /datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT)
+
+/obj/item/mecha_parts/part/justice_left_leg
+	name="\improper Justice left leg"
+	desc="A Justice left leg."
+	icon_state = "justice_l_leg"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 7.5, /datum/material/gold = HALF_SHEET_MATERIAL_AMOUNT, /datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT)
+
+/obj/item/mecha_parts/part/justice_right_leg
+	name="\improper Justice right leg"
+	desc="A Justice left leg."
+	icon_state = "justice_r_leg"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 7.5, /datum/material/gold = HALF_SHEET_MATERIAL_AMOUNT, /datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT)
+
+/obj/item/mecha_parts/part/justice_armor
+	name="Justice armor"
+	desc="Justice armor plates."
+	icon_state = "justice_armor"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 11.5, /datum/material/gold = SHEET_MATERIAL_AMOUNT * 8, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 9, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 6)
+
 ///////// Circuitboards
 
 /obj/item/circuitboard/mecha

@@ -35,7 +35,8 @@
 	var/list/discount_boosts
 	/// When this node is completed, allows these experiments to be performed.
 	var/list/experiments_to_unlock
-
+	/// CorvaxStation edit : Justice revival
+	var/illegal_mech_node = FALSE
 	/**
 	 * If set, the researched node will be announced on these channels by an announcement system
 	 * with 'announce_research_node' set to TRUE when researched by the station.

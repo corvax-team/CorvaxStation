@@ -54,6 +54,9 @@
 	/// Looping sound for printing items
 	var/datum/looping_sound/lathe_print/print_sound
 
+	/// CorvaxStation edit : Justice revival (Local designs that only this mechfab have(using when mechfab emaged so it's illegal designs).)
+	var/list/datum/design/illegal_local_designs
+
 	/// Direction the produced items will drop (0 means on top of us)
 	var/drop_direction = SOUTH
 
@@ -61,6 +64,7 @@
 	print_sound = new(src,  FALSE)
 	rmat = new (src, mapload && link_on_init)
 	cached_designs = list()
+	illegal_local_designs = list() // CorvaxStation edit : Justice revival
 	return ..()
 
 /obj/machinery/mecha_part_fabricator/Destroy()
@@ -151,6 +155,30 @@
 	drop_direction = direction
 	balloon_alert(user, "dropping [dir2text(drop_direction)]")
 
+/obj/machinery/mecha_part_fabricator/emag_act(mob/user, obj/item/card/emag/emag_card)
+	if(obj_flags & EMAGGED)
+		return FALSE
+	if(!HAS_TRAIT(user, TRAIT_KNOW_ROBO_WIRES))
+		to_chat(user, span_warning("You're unsure about [emag_card ? "where to swipe [emag_card] over" : "how to override"] [src] for any effect. Maybe if you had more knowledge of robotics..."))
+		return FALSE
+
+	obj_flags |= EMAGGED
+
+	for(var/node_id in SSresearch.techweb_nodes)
+		var/datum/techweb_node/illegal_mech_node = SSresearch.techweb_nodes[node_id]
+		if(!illegal_mech_node?.illegal_mech_node)
+			continue
+		for(var/design_path in illegal_mech_node.unlocked_designs)
+			if(!SSresearch.techweb_designs[design_path])
+				continue
+			illegal_local_designs |= design_path
+			cached_designs        |= design_path
+
+	say("R$c!i&ed ERROR de#i$ns. C@n%ec$%ng to ~NULL~ se#ve$s.")
+	playsound(src, 'sound/machines/uplink/uplinkerror.ogg', 50, TRUE)
+	update_static_data_for_all_viewers()
+	return TRUE
+
 /**
  * Updates the `final_sets` and `buildable_parts` for the current mecha fabricator.
  */
@@ -162,6 +190,10 @@
 		var/datum/design/design = SSresearch.techweb_designs[design_path]
 		if(design.build_type & MECHFAB)
 			cached_designs |= design_path
+
+	// CorvaxStation edit : Justice revival
+	for(var/design_path in illegal_local_designs)
+		cached_designs |= design_path
 
 	var/design_delta = length(cached_designs) - previous_design_count
 
@@ -362,6 +394,9 @@
 
 	for(var/design_path in cached_designs)
 		var/datum/design/design = SSresearch.techweb_designs[design_path]
+		if(!istype(design)) // CorvaxStation edit : Justice revival
+			continue
+
 		var/cost = list()
 		var/list/materials = design.materials
 		for(var/datum/material/mat in materials)
@@ -429,7 +464,7 @@
 
 			for(var/design_path in designs)
 				design_path = text2path(design_path)
-				if(!stored_research.researched_designs[design_path])
+				if(!(stored_research.researched_designs[design_path] || (design_path in illegal_local_designs))) // CorvaxStation edit : Justice revival
 					continue
 
 				var/datum/design/design = SSresearch.techweb_designs[design_path]
