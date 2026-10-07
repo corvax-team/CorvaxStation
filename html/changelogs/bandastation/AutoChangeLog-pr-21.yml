@@ -1,0 +1,4 @@
+author: "YesImMorty"
+delete-after: True
+changes:
+  - bugfix: "Иконки в интерфейсах больше не пропадают после смены адреса CDN."
