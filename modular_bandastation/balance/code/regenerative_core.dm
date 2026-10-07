@@ -1,4 +1,4 @@
-#define INTERNAL_CORE_HEALING -50
+#define INTERNAL_CORE_HEALING -80 // CorvaxStation edit 50 -> 80
 
 /obj/item/organ/monster_core/regenerative_core
 	desc_preserved = "All that remains of a hivelord. It is preserved, allowing you to use it to heal partially without danger of decay."

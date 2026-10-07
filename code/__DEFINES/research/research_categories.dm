@@ -142,6 +142,7 @@
 #define RND_CATEGORY_MECHFAB_PHAZON "/Фазон"
 #define RND_CATEGORY_MECHFAB_CLARKE "/Кларк"
 #define RND_CATEGORY_MECHFAB_SAVANNAH_IVANOV "/Саванна-Иванов"
+#define RND_CATEGORY_MECHFAB_JUSTICE "/Джастис" // CorvaxStation edit : Justice revival
 #define RND_SUBCATEGORY_MECHFAB_CHASSIS "/Шасси"
 #define RND_SUBCATEGORY_MECHFAB_SUPPORTED_EQUIPMENT "/Поддерживаемое снаряжение"
 #define RND_SUBCATEGORY_MECHFAB_CONTROL_INTERFACES "/Интерфейсы контроля"
