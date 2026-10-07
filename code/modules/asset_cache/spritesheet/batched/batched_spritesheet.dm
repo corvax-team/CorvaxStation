@@ -294,12 +294,18 @@
 		if(!fexists(fname))
 			return FALSE
 
-	var/css_hash = rustg_hash_file(RUSTG_HASH_MD5, css_file_directory)
-	SSassets.transport.register_asset(css_name, fcopy_rsc(css_file_directory), file_hash=css_hash)
 	for(var/size_id in sizes)
 		var/fname = "data/spritesheets/[name]_[size_id].png"
 		var/hash = rustg_hash_file(RUSTG_HASH_MD5, fname)
 		SSassets.transport.register_asset("[name]_[size_id].png", fcopy_rsc(fname), file_hash=hash)
+
+	// BANDASTATION EDIT START - cached css bakes in the asset url, rebuild it so a cdn change does not leave stale links
+	fdel(css_file_directory)
+	var/css = generate_css()
+	rustg_file_write(css, css_file_directory)
+	var/css_hash = rustg_hash_string(RUSTG_HASH_MD5, css)
+	// BANDASTATION EDIT END
+	SSassets.transport.register_asset(css_name, fcopy_rsc(css_file_directory), file_hash=css_hash)
 
 	if(CONFIG_GET(flag/save_spritesheets))
 		save_to_logs(file_name = css_name, file_location = css_file_directory)
